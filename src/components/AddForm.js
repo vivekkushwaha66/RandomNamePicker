@@ -12,7 +12,7 @@ const AddForm = ({ addName }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-2 p-2">
+    <form onSubmit={handleSubmit} autocomplete="off" className="mt-2 p-2">
       <h4>Add Participant</h4>
       <div className="form-group">
         <label htmlFor="name">Name</label>

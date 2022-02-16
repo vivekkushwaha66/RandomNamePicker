@@ -4,7 +4,7 @@ import AddForm from './components/AddForm';
 import Header from './components/Header';
 
 export default function App() {
-  const [selected, setSetlected] = React.useState('');
+  const [selected, setSetlected] = React.useState(null);
   const [names, setNames] = React.useState([]);
 
   const listOfNames =
@@ -25,6 +25,7 @@ export default function App() {
       : [];
 
   const addName = (name) => {
+    setSetlected(null);
     if (name) {
       setNames((previousNames) => {
         return [...previousNames, name];
@@ -33,6 +34,7 @@ export default function App() {
   };
 
   const deleteName = (index) => {
+    setSetlected(null);
     setNames((prevNames) => {
       const newNames = prevNames.filter((item, i) => index !== i);
       return newNames;
@@ -75,7 +77,7 @@ export default function App() {
             <h1 className="mt-3">
               Selected Person is
               <b className="text-capitalize">
-                <u>{selected}</u>
+                &nbsp;<u>{selected}</u>
               </b>
             </h1>
           </div>
